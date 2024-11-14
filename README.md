@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Copy the `.env.example` file to `.env`:
+1. Rename `sample.env` file to `.env`:
 2. Change the values in the `.env` file to your desired values
 3. Run `docker compose build`
 4. Run `docker-compose up -d`
