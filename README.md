@@ -7,7 +7,7 @@
 3. Run `docker compose build`
 4. Run `docker compose up -d`
 5. Open `http://localhost:{SS_WEB_PORT}` in your browser
-6. api docs can be found at `http://localhost:{SS_SERVER_PORT}/docs`
+6. api docs can be found at `http://localhost:{SS_CORE_PORT}/docs`
 
 ### Database
 To help visualize the database, see the plaintext data, and execute queries we can use any database client. Here's the instructions to connect to the databese using the [DBVisualizer](https://www.dbvis.com/) and [DBeaver](https://dbeaver.io/).
