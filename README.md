@@ -10,9 +10,11 @@
 6. api docs can be found at `http://localhost:{SS_CORE_PORT}/docs`
 
 ### Database
-To help visualize the database, see the plaintext data, and execute queries we can use any database client. Here's the instructions to connect to the databese using the [DBVisualizer](https://www.dbvis.com/) and [DBeaver](https://dbeaver.io/).
+
+To help visualize the database, see the plaintext data, and execute queries we can use any database client. Here's the instructions to connect to the database using the [DBVisualizer](https://www.dbvis.com/) and [DBeaver](https://dbeaver.io/).
 
 #### DBVisualizer Setup
+
 1. Create database connection > Search for "PostgreSQL"
 2. Change the following to reflect values defined in `.env` file:
     - Database Server = `SS_DB_HOST`
@@ -23,6 +25,7 @@ To help visualize the database, see the plaintext data, and execute queries we c
 3. Press "Connect"
 
 #### DBeaver Setup
+
 1. Click "New database connection" > Search for "PostgreSQL"
 2. Change the following to reflect values defined in `.env` file:
     - Host = `SS_DB_HOST`
