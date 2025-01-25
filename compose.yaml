@@ -4,7 +4,7 @@ services:
     ss-core:
         image: ghcr.io/star-sync/ss-core:${SS_CORE_VERSION}
         ports:
-            - "${SS_CORE_PORT}:8000"
+            - "${SS_CORE_INTERNAL_PORT}:${SS_CORE_PORT}"
         env_file: ".env"
         networks:
             - star-sync
@@ -12,17 +12,14 @@ services:
     ss-web:
         image: ghcr.io/star-sync/ss-web:${SS_WEB_VERSION}
         ports:
-            - "${SS_WEB_PORT}:3000"
+            - "${SS_WEB_INTERNAL_PORT}:${SS_WEB_PORT}"
         env_file: ".env"
         networks:
             - star-sync
 
     ss-db:
         image: postgres:latest
-        environment:
-            POSTGRES_USER: ${SS_DB_USER}
-            POSTGRES_PASSWORD: ${SS_DB_PASSWORD}
-            POSTGRES_DB: ${SS_DB_NAME}
+        env_file: ".env"
         ports:
             - "${SS_DB_PORT}:5432"
         networks:
@@ -33,6 +30,7 @@ services:
 
 networks:
     star-sync:
+        driver: bridge
 
 volumes:
     db-data:
