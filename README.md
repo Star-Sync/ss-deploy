@@ -2,12 +2,12 @@
 
 ## Setup
 
-1. Rename `sample.env` file to `.env`:
+1. Rename `core/sample.env` file to `core/.env`:
 2. Change the values in the `.env` file to your desired values
-3. Run `docker compose build`
-4. Run `docker compose up -d`
-5. Open `http://localhost:{SS_WEB_PORT}` in your browser
-6. api docs can be found at `http://localhost:{SS_CORE_PORT}/docs`
+3. Run `make run`
+4. Open `http://localhost:{SS_WEB_PORT}` in your browser
+5. API docs can be found at `http://localhost:{SS_CORE_PORT}/docs`
+6. To stop the system, run `make stop`
 
 ### Database
 To help visualize the database, see the plaintext data, and execute queries we can use any database client. Here's the instructions to connect to the databese using the [DBVisualizer](https://www.dbvis.com/) and [DBeaver](https://dbeaver.io/).

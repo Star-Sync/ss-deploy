@@ -1,8 +1,12 @@
-version: '3'
+name: logging
 
 networks:
   graynet:
     driver: bridge
+  star-sync:
+    driver: bridge
+    name: star-sync_star-sync
+    external: true
 
 # This is how you persist data between container restarts
 volumes:
@@ -84,6 +88,7 @@ services:
       - "graylog_data:/usr/share/graylog/data"
     networks:
       - graynet
+      - star-sync
     restart: always
     depends_on:
       opensearch:
