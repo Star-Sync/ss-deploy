@@ -30,7 +30,7 @@ services:
 
 networks:
     # we have to switch this to external as we create the network
-    # in the Makefile, therefore its not created in the stack, and is "extenral"
+    # in the Makefile, therefore its not created in the stack, and is "external"
     star-sync:
         name: star-sync_star-sync
         driver: bridge
