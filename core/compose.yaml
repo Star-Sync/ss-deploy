@@ -21,7 +21,7 @@ services:
         image: postgres:latest
         env_file: ".env"
         ports:
-            - "${SS_DB_PORT}:5432"
+            - "${POSTGRES_PORT}:5432"
         networks:
             - star-sync
         volumes:
@@ -29,8 +29,12 @@ services:
             - ./db/initdb:/docker-entrypoint-initdb.d
 
 networks:
+    # we have to switch this to external as we create the network
+    # in the Makefile, therefore its not created in the stack, and is "extenral"
     star-sync:
+        name: star-sync_star-sync
         driver: bridge
+        external: true
 
 volumes:
     db-data:
