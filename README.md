@@ -31,3 +31,7 @@ To help visualize the database, see the plaintext data, and execute queries we c
     - Username = `SS_DB_USER`
     - Password = `SS_DB_PASSWORD`
 3. Press "Finish" (might have to press "Connect" afterwards)
+
+## Update existing version
+1. Run `make pull`
+2. Run `make run`
