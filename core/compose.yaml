@@ -4,7 +4,7 @@ services:
     ss-core:
         image: ghcr.io/star-sync/ss-core:${SS_CORE_VERSION}
         ports:
-            - "${SS_CORE_INTERNAL_PORT}:${SS_CORE_PORT}"
+            - "${SS_CORE_PORT}:${SS_CORE_INTERNAL_PORT}"
         env_file: ".env"
         networks:
             - star-sync
@@ -12,7 +12,7 @@ services:
     ss-web:
         image: ghcr.io/star-sync/ss-web:${SS_WEB_VERSION}
         ports:
-            - "${SS_WEB_INTERNAL_PORT}:${SS_WEB_PORT}"
+            - "${SS_WEB_PORT}:${SS_WEB_INTERNAL_PORT}"
         env_file: ".env"
         networks:
             - star-sync
