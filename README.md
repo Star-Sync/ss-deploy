@@ -10,9 +10,11 @@
 6. To stop the system, run `make stop`
 
 ### Database
+
 To help visualize the database, see the plaintext data, and execute queries we can use any database client. Here's the instructions to connect to the databese using the [DBVisualizer](https://www.dbvis.com/) and [DBeaver](https://dbeaver.io/).
 
 #### DBVisualizer Setup
+
 1. Create database connection > Search for "PostgreSQL"
 2. Change the following to reflect values defined in `.env` file:
     - Database Server = `SS_DB_HOST`
@@ -23,6 +25,7 @@ To help visualize the database, see the plaintext data, and execute queries we c
 3. Press "Connect"
 
 #### DBeaver Setup
+
 1. Click "New database connection" > Search for "PostgreSQL"
 2. Change the following to reflect values defined in `.env` file:
     - Host = `SS_DB_HOST`
@@ -31,3 +34,9 @@ To help visualize the database, see the plaintext data, and execute queries we c
     - Username = `SS_DB_USER`
     - Password = `SS_DB_PASSWORD`
 3. Press "Finish" (might have to press "Connect" afterwards)
+
+## Update existing version
+
+1. Run `make stop`
+2. Run `make pull`
+3. Run `make run`
