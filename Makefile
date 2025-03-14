@@ -6,13 +6,10 @@ start-logging:
 start-core:
 	docker compose -f core/compose.yaml -p core-services up -d
 
-start-user-mgmt:
-	docker compose -f user-mgmt/compose.yaml -p user-mgmt up -d
-
 start-db: create-network
 	docker compose -f core/compose.yaml -p core-services up -d ss-db
 
-start-all: create-network start-logging start-core start-user-mgmt
+start-all: create-network start-logging start-core
 
 # Stopping the services
 stop-logging:
@@ -21,10 +18,7 @@ stop-logging:
 stop-core:
 	docker compose -f core/compose.yaml -p core-services down
 
-stop-user-mgmt:
-	docker compose -f user-mgmt/compose.yaml -p user-mgmt down
-
-stop-all: stop-logging stop-core stop-user-mgmt
+stop-all: stop-logging stop-core
 
 # Pull the images
 pull-logging:
@@ -33,10 +27,7 @@ pull-logging:
 pull-core:
 	docker compose -f core/compose.yaml -p core-services pull
 
-pull-user-mgmt:
-	docker compose -f user-mgmt/compose.yaml -p user-mgmt pull
-
-pull-all: pull-logging pull-core pull-user-mgmt
+pull-all: pull-logging pull-core
 
 # Network
 create-network:
