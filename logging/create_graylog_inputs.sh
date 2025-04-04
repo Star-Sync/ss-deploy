@@ -30,7 +30,7 @@ create_syslog_udp_input() {
   echo "Creating input with auth token: ${auth_token}"
 
   local input_payload='{
-    "title": "NEW pygelf",
+    "title": "ss-core pygelf",
     "global": true,
     "type": "org.graylog2.inputs.gelf.tcp.GELFTCPInput",
     "configuration": {
