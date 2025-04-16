@@ -28,6 +28,14 @@ services:
             - db-data:/var/lib/postgresql/data
             - ./db/initdb:/docker-entrypoint-initdb.d
 
+    ss-station-simulator:
+        image: ghcr.io/star-sync/station-simulator:${STATION_SIMULATOR_VERSION}
+        env_file: ".env"
+        networks:
+            - star-sync
+        ports:
+            - "${STATION_SIMULATOR_PORT}:${STATION_SIMULATOR_INTERNAL_PORT}"
+
 networks:
     # we have to switch this to external as we create the network
     # in the Makefile, therefore its not created in the stack, and is "external"
