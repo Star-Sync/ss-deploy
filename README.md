@@ -1,13 +1,26 @@
 # ss-deploy
 
+## Prerequisites
+- Linux or MacOS only (Windows is not supported)
+- Docker
+- Make
+- jq (can be installed via `make install-dependencies`)
+
+## Installation
+
+1. Clone the repository
+2. Run `make run`
+
 ## Setup
 
 1. Rename `core/sample.env` file to `core/.env`:
 2. Change the values in the `.env` file to your desired values
-3. Run `make run`
-4. Open `http://localhost:{SS_WEB_PORT}` in your browser
-5. API docs can be found at `http://localhost:{SS_CORE_PORT}/docs`
-6. To stop the system, run `make stop`
+3. Also change the values in the `logging/create_graylog_inputs.sh` and `logging/compose.yaml` files to your desired values (will be loaded from .env file in future updates)
+4. Run `make run`
+5. Open `http://localhost:{SS_WEB_PORT}` in your browser
+6. API docs can be found at `http://localhost:{SS_CORE_PORT}/docs`
+7. Logging can be viewed at `http://localhost:9000/`
+8. To stop the system, run `make stop`
 
 ### Database
 
